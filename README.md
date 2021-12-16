@@ -1,28 +1,23 @@
-# Welp 🤷 Reviews
+# Welp Reviews [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## Description
+This back end web application allows the user to write book reviews on any book within our database. The user can create an account and sign in to Welp where they can write and read comments and ratings of a wide variety of books.
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+## Installation
+`npm install`
+## Usage
+`node server`
+## License
+This software is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+## Contributing
+Create an issue and pull request as needed
+## Tests
 
-## Description 📚
-This back end web application allows the user to write book reviews on any book within our database. The user can create an account and sign in to Welp where they can write and read comments and ratings of a wide variety of books. 
-
-## User Story ✍️
-```
-AS AN avid reader
-I WANT a place where anyone can share their thoughts on books
-SO THAT I can plan my next book to read.
-```
-## Technologies Used 💻
-```
-Node.js
-Express.js
-RESTful API
-Handlebars
-MySQL
-Sequelize
-```
-## Ideas for Future Development 💡
-```
-Send reminders to the user on listed books to read
-Recommended books for user
-Add and follow other users to build community
-```
-## Deployment ✔️
-https://enigmatic-beyond-88465.herokuapp.com
+## Questions
+Check out my [GitHub profile](https://github.com/yanghuixi1)!
+If you have any questions or concerns, feel free to email me at <yanghui.xi1@gmail.com>
