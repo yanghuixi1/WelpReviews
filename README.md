@@ -44,8 +44,8 @@ HTML, Bootstrap, jQuery, Javascript, Express, MySQL, sequelize, Axios (backend A
 
 ## Work Division
 
-Aaron and Andrew: site design, UI, templates, styling, deployment.
-Jared: data models and seed data.
+Aaron and Andrew: site design, UI, templates, styling, deployment. </br>
+Jared: data models and seed data. </br>
 Tina: Google Books API, search functions
 
 ## License
