@@ -26,8 +26,13 @@ SO that users can keep track of their reading status.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Wire Frames](#wire-frames)
+- [Images of the Current Website](#images-of-the-current-website)
+- [Technologies](#technologies)
+- [Work Division](#work-division)
 - [License](#license)
 - [Contributing](#contributing)
+- [Deployment](#deployment)
 - [Questions](#questions)
 
 ## Installation
@@ -37,6 +42,29 @@ SO that users can keep track of their reading status.
 ## Usage
 
 `node server`
+
+## Wire Frames
+
+![Welp Reviews Wire Frames](./public/images/wire_frame_1.png)![Welp Reviews Wire Frames](./public/images/wire_frame_2.png)![Welp Reviews Wire Frames](./public/images/wire_frame_3.png)![Welp Reviews Wire Frames](./public/images/wire_frame_4.png)
+
+## Images of the current website
+
+Search Result Page
+
+![Welp Reviews Search Results Page](./public/images/welp_reviews_1.png)
+Collection Page
+
+![Welp Reviews Search Results Page](./public/images/welp_reviews_2.png)
+Review Page
+
+![Welp Reviews Search Results Page](./public/images/welp_reviews_3.png)
+Profile Page
+
+![Welp Reviews Search Results Page](./public/images/welp_reviews_4.png)
+
+Login Page
+
+## ![Welp Reviews Search Results Page](./public/images/welp_reviews_5.png)
 
 ## Technologies
 
@@ -59,25 +87,6 @@ Create an issue and pull request as needed
 ## Deployment
 
 https://enigmatic-beyond-88465.herokuapp.com
-
-## Images of the current website
-
-Search Result Page
-
-![Welp Reviews Search Results Page](./public/images/welp_reviews_1.png)
-Collection Page
-
-![Welp Reviews Search Results Page](./public/images/welp_reviews_2.png)
-Review Page
-
-![Welp Reviews Search Results Page](./public/images/welp_reviews_3.png)
-Profile Page
-
-![Welp Reviews Search Results Page](./public/images/welp_reviews_4.png)
-
-Login Page
-
-## ![Welp Reviews Search Results Page](./public/images/welp_reviews_5.png)
 
 ## Questions
 
