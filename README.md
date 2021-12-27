@@ -38,6 +38,16 @@ SO that users can keep track of their reading status.
 
 `node server`
 
+## Technologies
+
+HTML, Bootstrap, jQuery, Javascript, Express, MySQL, sequelize, Axios (backend API client), Google Books API, Handlebars
+
+## Work Division
+
+Aaron and Andrew: site design, UI, templates, styling, deployment.
+Jared: data models and seed data.
+Tina: Google Books API, search functions
+
 ## License
 
 This software is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
