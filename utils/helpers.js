@@ -4,7 +4,7 @@ async function getBooks(query) {
   let url = "https://www.googleapis.com/books/v1/volumes";
   const resp = await axios.get(url, {
     params: {
-      q: query,
+      q: query, // General search method
       langRestrict: "en",
       printType: "books",
       maxResults: 40,
@@ -18,7 +18,7 @@ async function getBooksByAuthor(name) {
   let url = "https://www.googleapis.com/books/v1/volumes";
   const resp = await axios.get(url, {
     params: {
-      q: `inauthor:${name}`,
+      q: `inauthor:${name}`, // Author search method
       langRestrict: "en",
       printType: "books",
       maxResults: 40,
@@ -32,7 +32,7 @@ async function getBooksByTitle(title) {
   let url = "https://www.googleapis.com/books/v1/volumes";
   const resp = await axios.get(url, {
     params: {
-      q: `intitle:${title}`,
+      q: `intitle:${title}`, // Title search method
       langRestrict: "en",
       printType: "books",
       maxResults: 40,
@@ -46,7 +46,7 @@ async function getBooksBySubject(subject) {
   let url = "https://www.googleapis.com/books/v1/volumes";
   const resp = await axios.get(url, {
     params: {
-      q: `insubject:${subject}`,
+      q: `insubject:${subject}`, // Subject search method
       langRestrict: "en",
       printType: "books",
       maxResults: 40,

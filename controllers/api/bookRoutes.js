@@ -5,15 +5,21 @@ const auth = require("../../utils/auth");
 const { User, Book } = require("../../models");
 
 router.post("/", auth.withAuthAdd, async (req, res) => {
+  // Creates a new book and relates it to the current user
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
     }); // Fetches the current user that is logged in, as a database object
+
+    // Rating, total ratings, and thumbnail can all be null, but are sent through HTTP as empty strings
+    // As such, we need to convert empty strings to null before inserting into database
     let rating = req.body.rating || null;
     let totalRatings = req.body.totalRatings || null;
     let thumbnail = req.body.thumbnail || null;
+    // Check if book currently exists in the book table
     let book = await Book.findOne({ where: { google_id: req.body.googleId } });
     if (book === null) {
+      // If it doesn't exist, then add it to the book table
       book = await Book.create({
         google_id: req.body.googleId,
         title: req.body.title,
@@ -23,6 +29,7 @@ router.post("/", auth.withAuthAdd, async (req, res) => {
         thumbnail: thumbnail,
       });
     }
+    // Relate the book to the current user, also setting the reading status
     userData.addBooks([book], {
       through: { reading_status: req.body.readingStatus },
     });

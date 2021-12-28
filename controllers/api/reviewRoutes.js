@@ -10,14 +10,16 @@ router.post("/", auth.withAuthAdd, async (req, res) => {
     let review = req.body.review || null;
     console.log(review);
     if (review === null) {
+      // Reject the review creation if no review content is provided
       res.status(400).json({ message: "You must enter text for the review" });
       return;
-      g;
     }
+    // Create a new review and add to review table
     review = await Review.create({
       title: req.body.title,
       description: req.body.review,
     });
+    // Relate new review to current user in user table
     userData.addReviews([review]);
     res.status(201).json(review);
   } catch (err) {

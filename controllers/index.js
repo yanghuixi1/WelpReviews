@@ -10,7 +10,7 @@ router.use("/search", searchRoutes);
 router.use("/api", apiRoutes);
 
 router.get("/", async (req, res) => {
-  res.render("login");
+  res.render("login"); // Render the login html template from the base route
 });
 
 router.get("/profile", auth.withAuth, async (req, res) => {
@@ -36,25 +36,25 @@ router.get("/login", (req, res) => {
   res.render("/");
 });
 
-// Login route
+// Home route
 router.get("/home", (req, res) => {
   // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
   }
-  // Otherwise, render the 'login' template
+  // Otherwise, render the home template
   res.render("home");
 });
 
-// Login route
+// Signup route
 router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
   }
-  // Otherwise, render the 'login' template
+  // Otherwise, render the signup template
   res.render("signup");
 });
 
@@ -62,12 +62,12 @@ router.get("/have-read", auth.withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-    });
+    }); // Fetches the current user that is logged in, as a database object
     let bookData = await userData.getBooks({
       through: { where: { reading_status: "Have Read" } },
-    });
+    }); // Get books that the user has already read
     let books = bookData.map((book) => book.get({ plain: true }));
-    res.render("books", { books });
+    res.render("books", { books }); // Render the books html template
   } catch (error) {
     console.log(error);
     res.status(500).json("request failed");
@@ -78,12 +78,12 @@ router.get("/currently-reading", auth.withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-    });
+    }); // Fetches the current user that is logged in, as a database object
     let bookData = await userData.getBooks({
       through: { where: { reading_status: "Reading" } },
-    });
+    }); // Get books that the user is currently reading
     let books = bookData.map((book) => book.get({ plain: true }));
-    res.render("books", { books });
+    res.render("books", { books }); // Render the books html template
   } catch (error) {
     console.log(error);
     res.status(500).json("request failed");
@@ -94,12 +94,12 @@ router.get("/want-to-read", auth.withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-    });
+    }); // Fetches the current user that is logged in, as a database object
     let bookData = await userData.getBooks({
       through: { where: { reading_status: "Want To Read" } },
-    });
+    }); // Get books that the user wants to read
     let books = bookData.map((book) => book.get({ plain: true }));
-    res.render("books", { books });
+    res.render("books", { books }); // Render the books html template
   } catch (error) {
     console.log(error);
     res.status(500).json("request failed");
@@ -121,18 +121,18 @@ router.get("/my-reviews", auth.withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-    });
+    }); // Fetches the current user that is logged in, as a database object
     let reviewData = await userData.getReviews({
       order: [["date_created", "DESC"]],
-    });
+    }); // Get the reviews that the user has written, sorted by date created in descending order
     let reviews = reviewData.map((review) => review.get({ plain: true }));
     reviews.map((review) => {
       review.date_created = moment(review.date_created).format(
         "MM/DD/YYYY h:mm:ss"
-      );
+      ); // Convert the created date into a more user-friendly format
       return review;
     });
-    res.render("myreviews", { reviews });
+    res.render("myreviews", { reviews }); // Render the reviews html template
   } catch (error) {
     console.log(error);
     res.status(500).json("request failed");

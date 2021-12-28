@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3001;
 
 // Initializing a session store in mysql
 const sess = {
-  secret: "adsfljlk43j5lj24", // SET AS ENVIRONMENT VARIABLE LATER
+  secret: "adsfljlk43j5lj24",
   cookie: {},
   resave: false,
   saveUninitialized: true,
